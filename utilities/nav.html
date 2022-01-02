@@ -1,0 +1,60 @@
+<nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
+  <div class="container">
+    <a class="navbar-brand" href="#">Brand</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#History">History</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#Commities">Commities</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#Calls">Calls</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#KeyNotes">KeyNotes</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#cameraready">CameraReady</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#programme">Programme</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#AcceptedPapers">AcceptedPapers</a> 
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#Attending">Attending</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#Contact">Contact</a>
+        </li>
+        <li class="nav-item ms-auto">
+          <!-- <div data-load="registerButton"></div> -->
+          <button type="button" class="nav-link btn btn-danger text-light" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+            Register
+          </button>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <script>
+    $(function() {
+      var $link = $('.nav-link');
+      $link.click(function(){
+          $link.removeClass('active');
+          $("#home").hide();
+          $(this).addClass('active');
+          localStorage.setItem("ActiveSection", $(this)[0].innerText);
+          $("#activeSection").load("../sections/"+(localStorage.getItem("ActiveSection")).toLowerCase()+".html")
+      });
+    })
+  </script>
+</nav>
