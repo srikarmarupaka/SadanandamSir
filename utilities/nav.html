@@ -1,3 +1,4 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
   <div class="container">
     <a class="navbar-brand" href="#">Brand</a>
@@ -50,12 +51,10 @@
       var $link = $('.nav-link');
       $link.click(function(){
           $link.removeClass('active');
-          console.log($link)
           $("#home").hide();
           $(this).addClass('active');
           localStorage.setItem("ActiveSection", $(this)[0].innerText);
-          console.log(localStorage.getItem("ActiveSection"))
-          $("#activeSection").load("../sections/"+(localStorage.getItem("ActiveSection")).toLowerCase()+".html")
+          $("#activeSection").load("/sections/"+(localStorage.getItem("ActiveSection")).toLowerCase()+".html")
       });
     })
   </script>
